@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<root>
+		<producao>
+			<host>localhost</host>
+			<banco>sabium</banco>
+			<porta>5440</porta>
+			<usuario>gobarber</usuario>
+			<senha>docker</senha>
+		</producao>	
+	</banco>
+</root>
