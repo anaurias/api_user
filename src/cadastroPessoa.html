@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href=".\style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    function localizaUsuario()
+    {
+     
+      $.ajax({
+                type: "GET",
+                url: "./Controller/Usuario.php",
+                success: function(msg) {
+                    var msg = $.parseJSON(msg);
+                    console.log(msg);
+                    if(msg.success=='yes')
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        alert('Server error');
+                        return false;
+                    }
+                }
+            });
+    }
+  </script>
+</head>
+<body>
+<div class="form-style-10">
+<form>
+    <div class="section"><span>1</span>Dados Cadastro</div>
+    <div class="inner-wrap">
+        <label>cpf<input type="text" name="cpf" onchange="localizaUsuario()"/></label>
+        <label>Nome<input type="text" name="nome" /></label>
+        
+    </div>
+
+    <div class="section"><span>2</span>Email e Telefone</div>
+    <div class="inner-wrap">
+        <label>Email<input type="email" name="email" /></label>
+        <label>Telefone<input type="text" name="telefone" /></label>
+    </div>
+
+    <div class="section"><span>3</span>Passwords</div>
+        <div class="inner-wrap">
+        <label>Password <input type="password" name="field5" /></label>
+        <label>Confirm Password <input type="password" name="field6" /></label>
+    </div>
+    <div class="button-section">
+     <input type="submit" name="Sign Up" />
+     <span class="privacy-policy">
+     <input type="checkbox" name="field7">You agree to our Terms and Policy. 
+     </span>
+    </div>
+</form>
+</div>
+</body>
+</html>
+

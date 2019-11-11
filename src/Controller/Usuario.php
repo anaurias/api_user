@@ -14,8 +14,8 @@ class Usuario
 
     public function buscaUsuario()
     {
-
-        $sth = $this->conexaoBd->prepare("select name, email from users");
+        die('teste');
+        $sth = $this->conexaoBd->prepare("select name, email from users limit 1");
 
         $sth->execute();
 
